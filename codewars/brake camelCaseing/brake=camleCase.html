@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break camelCase</title>
+  </head>
+  <body>
+    <!-- Complete the solution so that the function will break up camel casing, using a space between words.
+"camelCasing"  =>  "camel Casing"
+"identifier"   =>  "identifier"
+
+  it("test", () => {
+Test.assertEquals(solution('camelCasing'), 'camel Casing', 'Unexpected result')
+Test.assertEquals(solution('camelCasingTest'), 'camel Casing Test', 'Unexpected result')
+  }
+-->
+
+    <script>
+      // my solution
+      function solution(string) {
+        return string.split(/(?=[A-Z])/).join(' ')
+      }
+
+      console.log(solution('camelCasing'))
+
+      // intuitive way
+      function solution(string) {
+        return string
+          .split('')
+          .map((el) => {
+            if (el === el.toUpperCase()) {
+              el = ' ' + el
+            }
+            return el
+          })
+          .join('')
+      }
+
+      console.log(solution('camelCasing'))
+    </script>
+  </body>
+</html>
