@@ -3,6 +3,7 @@
 resources:
 https://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
 https://fireship.io/lessons/regex-cheat-sheet-js/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 
 split method wil not preserve value of emitter, to do that in regex use /(?=[regex])/g
 
