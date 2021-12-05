@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>count smiley faces</title>
+  </head>
+  <body>
+    <!-- Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+Rules for a smiling face:
+
+Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+Every smiling face must have a smiling mouth that should be marked with either ) or D
+No additional characters are allowed except for those mentioned.
+
+Valid smiley face examples: :) :D ;-D :~)
+Invalid smiley faces: ;( :> :} :]
+
+Example:
+countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1; 
+
+test cases:
+  Test.assertEquals(countSmileys([]), 0);
+    Test.assertEquals(countSmileys([':D',':~)',';~D',':)']), 4);
+    Test.assertEquals(countSmileys([':)',':(',':D',':O',':;']), 2);
+    Test.assertEquals(countSmileys([';]', ':[', ';*', ':$', ';-D']), 1);
+-->
+
+    <script>
+      // let regex = /(\\)|D) /g
+
+      // testCase = [':)', ':~> ', ';~)', ';~D', ';O', ':~(', ';>']
+      // let valid = [
+      //   ':)',
+      //   ':~)',
+      //   ':-)',
+      //   ';-)',
+      //   ';~)',
+      //   ':D',
+      //   ':~D',
+      //   ':-D',
+      //   ';-D',
+      //   ';~D',
+      // ].join(' ')
+
+      // console.log(valid)
+      //   .join(' ')
+      //   .match(!regex)
+
+      // testCase.map((el) => {
+      //   return el == ':)'
+      // })
+
+      // console.log(testCase)
+
+      //      let filtered = arr
+      //      .join('')
+      //      .replace(regex, 1)
+      //      .split('')
+      //      .filter((el) => el === '1').length
+
+      // console.log(filtered)
+
+      let arr = [':)', ':(', ':D', ':O', ':;']
+      // arr.forEach((el, i, arr) => {
+      //   console.log(el[el.length - 1])
+      //   if (el[el.length - 1] !== 'D' || el[el.length - 1] !== ')') {
+      //   }
+      // })
+
+      console.log(
+
+      arr.forEach(element => {
+
+       arr.filter((el) => {
+         if (el[el.length - 1] === 'D' || el[el.length - 1] === ')') {
+           return el
+         }
+       }).length
+      });
+      )
+    </script>
+  </body>
+</html>
