@@ -17,17 +17,35 @@ console.log('ok')
 
 // a.
 
-let height = 5
-let length = 5
-function getAsterisks() {
-  for (let i = 0; i <= length; i++) {
-    for (let j = 0; j <= length; j++) {
-      document.write(' *')
-    }
-    document.write('<br>')
+// let height = 5
+// let length = 5
+// function getAsterisks() {
+//   for (let i = 0; i <= length; i++) {
+//     for (let j = 0; j <= length; j++) {
+//       document.write(' *')
+//     }
+//     document.write('<br>')
+//   }
+// }
+
+// getAsterisks()
+
+let size = 5
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    document.write(' *')
   }
+  document.write('<br>')
 }
 
-getAsterisks()
+document.write('<br>')
+document.write('<br>')
 
-document.write('-----', '<br>')
+for (let i = 0; i < size; i++) {
+  //rows
+  for (let j = i; j < size; j++) {
+    // culms
+    document.write('*')
+  }
+  document.write('<br>')
+}

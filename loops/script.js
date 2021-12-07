@@ -1,7 +1,43 @@
+let size = 5
+
+document.write('<h3>Hollow square</h3>')
+
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    if (i == size - 1 || i == 0 || j == 0 || j == size - 1) {
+      document.write(' *')
+    } else {
+      document.write('&nbsp&nbsp&nbsp')
+    }
+  }
+  document.write('<br>')
+}
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    if (i == size - 1 || j == 0) {
+      document.write(' *')
+    } else {
+      document.write('&nbsp&nbsp&nbsp')
+    }
+  }
+  document.write('<br>')
+}
+
+document.write('<h3>Bars</h3>')
+
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    if (j == 0 || j == size - 1) {
+      document.write('* ')
+    } else document.write(' &nbsp&nbsp&nbsp')
+  }
+  document.write('<br>')
+}
+
 document.write('<h3>Square</h3>')
 for (let i = 0; i < 4; i++) {
   for (let i = 0; i < 4; i++) {
-    document.write(' #')
+    document.write(' *')
   }
   document.write('<br>')
 }
@@ -9,7 +45,7 @@ for (let i = 0; i < 4; i++) {
 document.write('<h3>Triangle</h3>')
 for (let i = 0; i < 5; i++) {
   for (let j = 0; j < i; j++) {
-    document.write(' #')
+    document.write(' *')
   }
   document.write('<br>')
 }
@@ -17,7 +53,7 @@ for (let i = 0; i < 5; i++) {
 document.write('<h3>Inverted Triangle</h3>')
 for (let i = 0; i < 5; i++) {
   for (let j = 5; j > i; j--) {
-    document.write(' #')
+    document.write(' *')
   }
   document.write('<br>')
 }
@@ -36,7 +72,7 @@ for (let i = 0; i < 5; i++) {
   document.write('<br>')
 }
 
-document.write('<h3>diamond shape</h3>')
+document.write('<h3>Diamond shape</h3>')
 for (let i = 0; i < 5; i++) {
   for (let j = 5; j > i; j--) {
     document.write(' &nbsp&nbsp')
@@ -58,20 +94,6 @@ for (let i = 0; i < 5; i++) {
   }
   for (let j = 5; j > i; j--) {
     document.write(' #')
-  }
-  document.write('<br>')
-}
-
-document.write('<br>')
-document.write('<br>')
-document.write('%%%%')
-document.write('<br>')
-document.write('<br>')
-
-let length = 5
-for (let i = 0; i < length; i++) {
-  for (let j = 0; j < i; j++) {
-    document.write('*')
   }
   document.write('<br>')
 }
