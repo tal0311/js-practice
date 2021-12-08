@@ -17,35 +17,69 @@ console.log('ok')
 
 // a.
 
-// let height = 5
-// let length = 5
-// function getAsterisks() {
-//   for (let i = 0; i <= length; i++) {
-//     for (let j = 0; j <= length; j++) {
-//       document.write(' *')
-//     }
-//     document.write('<br>')
-//   }
-// }
-
-// getAsterisks()
-
-let size = 5
-for (let i = 0; i < size; i++) {
-  for (let j = 0; j < size; j++) {
-    document.write(' *')
+let character = ' ✡' || prompt('choose a character to display in shapes')
+document.write('<h1>Get pyramid</h1>')
+let length = 5 || prompt('pick a number 1-10')
+function getAsterisks(length) {
+  for (let i = 0; i < length; i++) {
+    for (let j = 0; j <= i; j++) {
+      document.write(character)
+    }
+    document.write('<br>')
   }
-  document.write('<br>')
+  for (let i = 0; i <= length; i++) {
+    for (let j = length; j >= i; j--) {
+      document.write(character)
+    }
+    document.write('<br>')
+  }
 }
 
-document.write('<br>')
-document.write('<br>')
+getAsterisks(length)
 
-for (let i = 0; i < size; i++) {
-  //rows
-  for (let j = i; j < size; j++) {
-    // culms
-    document.write('*')
+document.write('<br>')
+document.write('<h1>Get equalizer</h1>')
+let rowCount = 8 || prompt('choose a number 1-5')
+function getMusicEqualizer(rowCount) {
+  for (let i = 0; i < rowCount; i++) {
+    let random = Math.floor(Math.random() * rowCount)
+    for (let j = random; j < rowCount; j++) {
+      document.write(character)
+    }
+    document.write('<br>')
   }
-  document.write('<br>')
 }
+
+getMusicEqualizer(rowCount)
+
+document.write('<br>')
+document.write('<h1>Get square</h1>')
+
+let rows = 4 || prompt('choose rows number of square')
+let cols = 5 || prompt('choose cols number of square')
+function getSquare(rows, cols) {
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      document.write(character)
+    }
+    document.write('<br>')
+  }
+}
+getSquare(rows, cols)
+
+document.write('<br>')
+document.write('<h1>Get square outline</h1>')
+
+function getSquareOutline(rows, cols) {
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
+        document.write(character)
+      } else {
+        document.write(' &nbsp &nbsp')
+      }
+    }
+    document.write('<br>')
+  }
+}
+getSquareOutline(rows, cols)
