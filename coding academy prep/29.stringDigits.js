@@ -76,6 +76,7 @@ console.log(isStrongNumber(userNumberArr))
 
 // perfect numbers
 
+
 function isPerfect() {
   let targetNumber = 28
   let arrTarget = []
