@@ -48,6 +48,10 @@ printVowelsCount(str)
 
 // b. Write a function that gets a string and changes the vowels to lowercase letters,
 // and the rest to uppercase letters (GiZiM GiDoo).
+
+// resources:
+//https://www.youtube.com/watch?v=PenXAtiFmJc
+
 function toLowerCase(str) {
   let strArr = str.split('')
   let upperCase = []
