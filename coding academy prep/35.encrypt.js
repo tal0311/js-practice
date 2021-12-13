@@ -32,37 +32,28 @@
 //   return decryptStr
 // }
 // console.log(decrypt(encryptedArr))
+console.log('AZ'.charCodeAt(0), 'AZ'.charCodeAt(1))
+// console.log(String.fromCharCode(102))
 
-let toEncrypt = 'message decrypted'
-let toDecrypt
-function encrypt(toDecrypt) {
-  if (toEncrypt) {
-    let encryptedArr = []
-    for (let i = 0; i < toEncrypt.length; i++) {
-      letter = toEncrypt[i].charCodeAt(toEncrypt[i]) + 5
+let str1 = 'ABCD'
 
-      encryptedArr.push(letter)
+let str2 = 'fghi'
+console.log(str2.charCodeAt(str2[3]))
+
+function encryptDecrypt(str) {
+  let arr = []
+  console.log(str)
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].charCodeAt() > 97) {
+      letter = str[i].charCodeAt() - 37
+      decrypt = String.fromCharCode(letter)
+      arr.push(decrypt)
+    } else if (str[i].charCodeAt() < 97) {
+      letter = str[i].charCodeAt() + 37
+      encrypted = String.fromCharCode(letter)
+      arr.push(encrypted)
     }
-
-    console.log(encryptedArr)
-
-    toDecrypt = encryptedArr.join(' ')
-    return toDecrypt
-  } else {
-    return console.log('ok')
   }
+  return arr.join('')
 }
-
-encrypt(toDecrypt)
-
-// function decrypt(arr) {
-//   console.log(arr.split(' '))
-//   decryptStr = ''
-//   for (let i = 0; i < arr.length; i++) {
-//     letter = String.fromCharCode(arr[i] - 5)
-//     decryptStr += letter
-//   }
-//   console.log(decryptStr)
-//   return decryptStr
-// }
-// console.log(decrypt(encrypt(encrypted)))
+console.log(encryptDecrypt(str2))
