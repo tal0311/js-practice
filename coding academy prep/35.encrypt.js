@@ -33,11 +33,10 @@
 // }
 // console.log(decrypt(encryptedArr))
 console.log('AZ'.charCodeAt(0), 'AZ'.charCodeAt(1))
-// console.log(String.fromCharCode(102))
 
+// to encrypt use upper case letters
 let str1 = 'ABCD'
 
-let str2 = 'fghi'
 console.log(str2.charCodeAt(str2[3]))
 
 function encryptDecrypt(str) {
@@ -56,4 +55,4 @@ function encryptDecrypt(str) {
   }
   return arr.join('')
 }
-console.log(encryptDecrypt(str2))
+console.log(encryptDecrypt(str1))
