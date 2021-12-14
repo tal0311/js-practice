@@ -2,7 +2,10 @@
 // votes this candidate got. i.e.: if the votes array looks like this: ['Nuli', 'Pingi', 'Uza',
 // 'Shabi', ‘Uza’] And the candidateName is : 'Uza', the function returns 2.
 
-arr = ['Nuli', 'Pingi', 'Uza', 'Shabi', 'Uza']
+// resource:
+//stackoverflow.com/questions/6120931/how-to-count-certain-elements-in-array
+
+https: arr = ['Nuli', 'Pingi', 'Uza', 'Shabi', 'Uza']
 console.log(arr)
 
 let arrCount = []
