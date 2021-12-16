@@ -3,10 +3,24 @@
 // TIP: this can be done in a single loop by first identifying the shorter or longer array
 // from the two.
 
-let arr1 = [1, 2, 3, 5, 6, 78]
-let arr2 = [10, 22, 37, 52, 63, 58]
+function getUserInput() {
+  con = true
+  let arr = []
+  for (let i = 0; con; i++) {
+    userInput = Number(
+      prompt('log Numbers to 2 arrays, to close the array log 999')
+    )
 
-console.log(arr1, arr2)
+    if (userInput === 999) {
+      con = false
+    } else {
+      arr.push(userInput)
+    }
+  }
+  return arr
+}
+// let arr1 = getUserInput()
+// let arr2 = getUserInput()
 
 function sumArray(arr1, arr2) {
   console.log(arr1, arr2)
