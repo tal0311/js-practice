@@ -6,22 +6,38 @@
 
 str = 'puki ben david and muki ben david'
 
-function countWord(str) {
-  let strToArr = str.split(' ')
-  let obj = new Map()
+// function countWord(str) {
+//   let strToArr = str.split(' ')
+//   let obj = new Map()
 
-  strToArr.forEach((el) => {
-    obj.set(el, 0)
-  })
+//   strToArr.forEach((el) => {
+//     obj.set(el, 0)
+//   })
 
-  for (let [key, value] of obj) {
-    for (let v = 0; v < strToArr.length; v++) {
-      if (key == strToArr[v]) {
-        obj.set(key, (value += 1))
-      }
+//   for (let [key, value] of obj) {
+//     for (let v = 0; v < strToArr.length; v++) {
+//       if (key == strToArr[v]) {
+//         obj.set(key, (value += 1))
+//       }
+//     }
+//   }
+//   return obj
+// }
+
+// console.log(countWord(str))
+
+function countWords(str) {
+  let count = {}
+  toArr = str.split(' ')
+  console.log(toArr)
+  toArr.forEach((item) => {
+    if (count[item]) {
+      count[item]++
+    } else {
+      count[item] = 1
     }
-  }
-  return obj
+  })
+  return count
 }
 
-console.log(countWord(str))
+console.log(countWords(str))

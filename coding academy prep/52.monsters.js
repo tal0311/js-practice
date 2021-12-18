@@ -21,7 +21,7 @@
 
 class Monster {
   constructor(name, id, power) {
-    ;(this.name = 'testMon' || prompt('monster name?')),
+    ;(this.name = 'testMon' + id || prompt('monster name?')),
       (this.id = id),
       (this.power = power)
   }
@@ -33,25 +33,29 @@ function createMonster() {
   power = 30
   for (let i = 0; i < 4; i++) {
     let monster = new Monster(name, id++, (power += 10))
-    monsters.push(monster)
+
+    monsters = [...monsters, { ...monster }]
   }
   return monsters
 }
 console.log(createMonster())
 
 function getMonsterById(id) {
-  let monster = monsters.filter((monster) => monster.id == id)
+  // let monster = monsters.filter((monster) => monster.id == id)
+
+  let [monster] = monsters.filter((monster) => monster.id == id)
+
   return monster
 }
-// console.log('get Monster by id:', getMonsterById(3))
+console.log(getMonsterById(3))
 
-function deleteMonster(id) {
-  // monsters = monsters.filter((monster) => monster.id !== id)
-  monsters.splice(id, id)
+// function deleteMonster(id) {
+//   monsters = monsters.filter((monster) => monster.id !== id)
+//   // monsters.splice(id, id)
 
-  return monsters
-}
-console.log('delete monster by id:', deleteMonster())
+//   return monsters
+// }
+// console.log('delete monster by id:', deleteMonster(1))
 
 function updateMonster(id, newPower) {
   let monster = monsters.filter((monster) => monster.id == id)
@@ -81,9 +85,7 @@ console.log('************************************************')
 // parents power. The name is the beginning half of the first parent name, and the
 // second half is the end of the second parent name.
 
-function breedMonsters({ ...mon1 }, { ...mon2 }) {
-  mon1 = mon1[0]
-  mon2 = mon2[0]
+function breedMonsters(mon1, mon2) {
   name = mon1.name.slice(0, 2) + mon2.name.slice(3, -1)
   id = mon2.id + mon1.id
   power = (mon1.power + mon2.power) / 2
