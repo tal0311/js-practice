@@ -28,6 +28,9 @@ str = 'puki ben david and muki ben david'
 
 function countWords(str) {
   let count = {}
+  console.log(count)
+  console.log('count:', count)
+
   toArr = str.split(' ')
   console.log(toArr)
   toArr.forEach((item) => {
