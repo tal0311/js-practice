@@ -4,9 +4,17 @@ class Student {
   }
 
   calcAverage() {
-    console.log('ok')
+    let sum = 0
+    let average = 0
+    for (let i = 0; i < this.grades.length; i++) {
+      sum += this.grades[i]
+    }
+    average = Math.floor(sum / this.grades.length)
+    return average
   }
 }
+
+let studentOne = new Student('test-student', [98, 87, 78])
 
 let students = []
 function createStudent() {
@@ -25,7 +33,6 @@ function createStudent() {
       }
 
       let student = new Student(studentName, grades)
-      console.log(student)
       students = [...students, student]
     }
   }
@@ -34,5 +41,10 @@ function createStudent() {
 
 console.log(createStudent())
 
-let studentOne = new Student('test-student', [98, 87, 78])
-console.log(studentOne)
+students.forEach((student) => {
+  student.calcAverage()
+  console.log(
+    `student ${student.studentName} avg grades is:`,
+    student.calcAverage()
+  )
+})
