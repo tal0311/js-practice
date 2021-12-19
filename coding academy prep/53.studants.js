@@ -14,11 +14,11 @@ class Student {
   }
 }
 
-let studentOne = new Student('btest-student', [98, 87, 78])
-let studentTow = new Student('Atest-student', [76, 87, 78])
-let studentThree = new Student('ctest-student', [65, 87, 78])
+// let studentOne = new Student('btest-student', [98, 87, 78])
+// let studentTow = new Student('Atest-student', [76, 87, 78])
+// let studentThree = new Student('ctest-student', [65, 87, 78])
 
-let testArr = [studentOne, studentTow, studentThree]
+// let testArr = [studentOne, studentTow, studentThree]
 
 let students = []
 function createStudent() {
@@ -60,7 +60,7 @@ function findWorstStudent() {
       name: student.studentName,
       average: student.calcAverage(),
     }
-    studentSorted.push(newStudent)
+    studentSorted = [...studentSorted, newStudent]
   })
 
   bestStudent = studentSorted[0]
