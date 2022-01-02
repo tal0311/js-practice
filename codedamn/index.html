@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function randomNumberGeneratorInRange(rangeStart, rangeEnd) {
+      //   rang = rangeEnd - rangeStart
+
+      //   let number = Math.floor(Math.random() * rang)
+      //   if (number < rang) number += rangeStart
+      //   return number
+      // }
+
+      // console.log(`My random number: ${randomNumberGeneratorInRange(100, 200)}`)
+
+      // const str = 'JavaScript is awesome'
+
+      // function reverseAString(str) {
+      //   let toArr = str.split('')
+      //   let reverseStr = toArr.reverse().join('')
+
+      //   return reverseStr
+      // }
+
+      // console.log(`Reversed string is: ${reverseAString(str)}`)
+
+      // Write a program to reverse a given integer number
+      // The remainder of the number can be fetched and the number can be divided by 10 to remove the the digit in loop till number becomes 0
+      // A simple approach to reverse a number could also be to convert it in to a string and then reverse it
+
+      // const num = 3849
+
+      // function reverseGivenInteger(num) {
+      //   num / 10
+      //   toStr = num.toString()
+      //   let reversed = Number(toStr.split('').reverse().join(''))
+
+      //   return reversed
+      // }
+
+      // console.log(`Reversed integer is: ${reverseGivenInteger(num)}`)
+
+      //Write a function which can convert the time input given in 12 hours format to 24 hours format
+      // The check for 'AM' and 'PM' can be verified using endsWith String method
+      // An extra 0 would be needed if the hours have single digit
+      let time = '12:10AM'
+      let time2 = '22:10PM'
+
+      function convertTo24HrsFormat(time) {
+        if (time.endsWith('AM')) {
+          let hours = time.slice(0, 2) * 1 + 12
+          console.log('hours:', hours)
+          if (hours >= 24) hours = 0
+
+          let minutes = time.slice(3, 5) * 1
+          return (time = `${hours}:${minutes}`)
+        } else {
+          let hours = time.slice(0, 2) * 1 - 12
+          let minutes = time.slice(3, 5) * 1
+          console.log(hours, minutes)
+          return (time = `${hours}:${minutes}`)
+        }
+      }
+
+      console.log(`Converted time: ${convertTo24HrsFormat(time)}`)
+    </script>
+  </body>
+</html>

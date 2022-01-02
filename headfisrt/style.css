@@ -1,0 +1,12 @@
+.image-container {
+  height: 75vh;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+}
+.image-container .image {
+  background-color: antiquewhite;
+  border: black 1px solid;
+  height: 30%;
+  width: 30%;
+}
