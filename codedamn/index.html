@@ -48,26 +48,43 @@
       //Write a function which can convert the time input given in 12 hours format to 24 hours format
       // The check for 'AM' and 'PM' can be verified using endsWith String method
       // An extra 0 would be needed if the hours have single digit
-      let time = '12:10AM'
-      let time2 = '22:10PM'
+      // let time = '05:00AM'
 
-      function convertTo24HrsFormat(time) {
-        if (time.endsWith('AM')) {
-          let hours = time.slice(0, 2) * 1 + 12
-          console.log('hours:', hours)
-          if (hours >= 24) hours = 0
+      // function convertTo24HrsFormat(time) {
+      //   if (time.endsWith('AM') || time.startsWith('0')) {
+      //     minutes = Number(time.slice(3, 5))
+      //     hours = Number(time.slice(0, 2)) + 12 + '0'
 
-          let minutes = time.slice(3, 5) * 1
-          return (time = `${hours}:${minutes}`)
-        } else {
-          let hours = time.slice(0, 2) * 1 - 12
-          let minutes = time.slice(3, 5) * 1
-          console.log(hours, minutes)
-          return (time = `${hours}:${minutes}`)
-        }
+      //     return (converted = hours.toString() + minutes.toString())
+      //   } else {
+      //     minutes = Number(time.slice(3, 5))
+      //     hours = Number(time.slice(0, 2)) - 12
+
+      //     return (converted = hours.toString() + minutes.toString())
+      //   }
+      // }
+
+      // console.log(`Converted time: ${convertTo24HrsFormat(time)}`)
+
+      // Write a function which accepts a string argument and returns the count of characters between the first and last character 'X'
+      // indexOf and lastIndexOf are the methods on String which returns the position of the given string in the input string from start and end respectively
+      // If the match is not found, these methods return -1
+
+      const str = 'XeroX'
+
+      function getTheGapX(str) {
+        if (str.indexOf('X') === 0 && str.lastIndexOf('X') === str.length - 1) {
+          newStr = ''
+          for (let i = 0; i < str.length; i++) {
+            if (str[i] !== 'X') {
+              newStr += str[i]
+            }
+          }
+          return newStr.length
+        } else return -1
       }
 
-      console.log(`Converted time: ${convertTo24HrsFormat(time)}`)
+      console.log(`Gap between the X's: ${getTheGapX(str)}`)
     </script>
   </body>
 </html>
