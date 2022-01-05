@@ -7,11 +7,37 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      str = 'kkkhhhgggsssiiinnnggggsss'
+    <h1>hallo</h1>
 
-      mod = str.replaceAll('k', 'p')
+    <script>
+      // REPLACE ALL
+      let str = 'kkkhhhgggsssiiinnnggggsss'
+
+      let mod = str.replaceAll('k', 'p')
       console.log('mod:', mod)
+
+      // LOGICAL OPERATOR
+
+      const h1 = document.querySelector('h1')
+
+      h1text = h1.textContent ||= 'no text '
+      console.log('h1text:', h1text)
+
+      const a = { duration: 50, title: '' }
+
+      a.duration ||= 10
+      console.log(a.duration)
+      // expected output: 50
+
+      a.title ||= 'title is empty.'
+      console.log(a.title)
+      // expected output: "title is empty"
+
+      x = 5
+      y = 10
+
+      // NUMERICAL SEPARATOR
+      console.log(10_0000_0000)
     </script>
   </body>
 </html>
