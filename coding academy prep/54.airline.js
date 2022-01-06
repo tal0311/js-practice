@@ -21,7 +21,6 @@
 // ii. Create an array of 2 planes.
 
 // iii. Create an array of 2 flights, each flight has a plane property that points
-
 // to a plane object, and a passengers property that points to the
 // passengers array.
 
@@ -43,8 +42,8 @@ class Plane {
   }
 }
 class Passenger {
-  constructor(fullName, flights) {
-    ;(this.fullName = fullName), (this.flights = flights)
+  constructor(id, fullName, flights) {
+    ;(this.id = id), (this.fullName = fullName), (this.flights = flights)
   }
 }
 class Flight {
@@ -57,55 +56,55 @@ class Flight {
   }
 }
 
-let plane = new Plane('airbuss', 100)
+// let passenger = new Passenger('tal', [])
 
-let passenger = new Passenger('tal', [])
+// let flight = new Flight(
+//   new Date().getFullYear(),
+//   'israel',
+//   'usa',
+//   new Plane('airbus', 100),
+//   []
+// )
 
-let flight = new Flight(
-  new Date().getFullYear(),
-  'israel',
-  'usa',
-  plane.model,
-  []
-)
+// function createPlane(condition) {
+//   let planes = []
+//   for (let i = 0; i < condition; i++) {
+//     let plane = new Plane('airbus', 100)
 
-function createPlane(condition) {
-  let planes = []
-  for (let i = 0; i < condition; i++) {
-    let plane = new Plane('airbus', 100)
+//     planes = [...planes, plane]
+//   }
+//   return planes
+// }
+// createPlane()
+// console.log('createPlane:', createPlane(2))
 
-    planes = [...planes, plane]
-  }
-  return planes
-}
-createPlane()
-console.log('createPlane:', createPlane(2))
-
-function getPassengers(passNumber) {
-  let passengers = []
-  for (let i = 0; i < passNumber; i++) {
-    let passenger = new Passenger('test-passenger', [])
-    passengers = [...passengers, passenger]
-  }
-  return passengers
-}
-getPassengers()
-
-function createFlight(planes) {
+function createFlight() {
   let flights = []
   for (let i = 0; i < 2; i++) {
     let flight = new Flight(
       new Date().getFullYear(),
       'israel',
       'usa',
-      planes[0],
-      []
+      new Plane('airbus', 100),
+      [getPassengers(5)]
     )
-    flight.passengers = [...flight.passengers, ...getPassengers(5)]
     flights = [...flights, flight]
   }
 
   return flights
 }
 
-console.log('createFlight:', createFlight(createPlane(2)))
+let flightArr = createFlight()
+console.log('flightArr:', flightArr)
+
+console.log(getPassengers(flightArr, 5))
+
+function getPassengers(flight, passNumber) {
+  let passengers = []
+  id = new Date().getTime().toString().slice(0, 7)
+  for (let i = 0; i < passNumber; i++) {
+    let passenger = new Passenger(id++, 'test-passenger', [flight[0]])
+    passengers = [...passengers, passenger]
+  }
+  return passengers
+}

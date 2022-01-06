@@ -36,3 +36,14 @@ for (let i = 0; i < numsArr.length; i++) {
   }
 }
 console.log(biggestNum)
+
+console.log((str = 'bomb' + ' '))
+
+let bombArr = [str.repeat(20)]
+console.log('bombArr:', bombArr)
+
+let mine = 'mine'
+let mineArr = []
+mineArr.length = 20
+let mines = mineArr.fill(mine)
+console.log('mines:', mines)
