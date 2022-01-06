@@ -73,3 +73,26 @@ function findAvg(mat) {
   avg = sum / divider.length
   return avg
 }
+
+// e.
+console.log('e.:')
+let rowIdxStart = 0
+let rowIdxEnd = mat[0].length
+console.log('rowIdxEnd:', rowIdxEnd)
+let colIdxStart = 0
+console.log('colIdxStart:', colIdxStart)
+let colIdxEnd = mat[length].length
+console.log('colIdxEnd:', colIdxEnd)
+
+let areaOfMat = sumArea(mat, rowIdxStart, rowIdxEnd, colIdxStart, colIdxEnd)
+function sumArea(mat, rowIdxStart, rowIdxEnd, colIdxStart, colIdxEnd) {
+  let vertical = colIdxEnd - colIdxStart
+  console.log('vertical:', vertical)
+  let horizontal = rowIdxEnd - rowIdxStart
+  console.log('horizontal:', horizontal)
+
+  area = vertical * horizontal
+  return area
+}
+
+console.log(areaOfMat)
