@@ -1,0 +1,13 @@
+.cell {
+  border-top-width: 2px;
+  background-color: aliceblue;
+
+  border: 1px solid black;
+}
+
+div.board {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
