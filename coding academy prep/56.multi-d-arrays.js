@@ -95,22 +95,22 @@
 //   return area
 // }
 
-// console.log(areaOfMat)
-class cell {
-  constructor(value, content) {
-    this.value = document.createElement('div')
-    this.content = content
-  }
-  click() {
-    this.content.addEventListener('click', console.log('ok'))
-  }
-}
+// // console.log(areaOfMat)
+// class cell {
+//   constructor(value, content) {
+//     this.value = document.createElement('div')
+//     this.content = content
+//   }
+//   click() {
+//     this.content.addEventListener('click', console.log('ok'))
+//   }
+// }
 
-let mine2 = new cell('mine', `<div>click</div>`)
-console.log('mine2:', mine2)
+// let mine2 = new cell('mine', `<div>click</div>`)
+// console.log('mine2:', mine2)
 
-const board = document.querySelector('.board')
-board.appendChild((mine2.innerHTML = mine2.content))
+// const board = document.querySelector('.board')
+// board.appendChild((mine2.innerHTML = mine2.content))
 
 // class mine {
 //   constructor(value) {
@@ -157,3 +157,38 @@ board.appendChild((mine2.innerHTML = mine2.content))
 //   }
 // }
 // createBoard(setMines())
+
+let boardSize = 5
+let minesNum = 5
+let id = 0
+let mat3 = []
+
+function crateBoard(mineArr) {
+  console.log(mineArr)
+  for (let i = 0; i < boardSize; i++) {
+    let row = []
+    for (let j = 0; j < boardSize; j++) {
+      let cell = j
+      cell = {
+        id: id++,
+        isMine: false,
+      }
+      if (mineArr.includes(id - 1)) {
+        cell.isMine = true
+      }
+      row.push(cell)
+    }
+    mat3.push(row)
+  }
+  return mat3
+}
+let board = crateBoard(isMine())
+
+function isMine() {
+  mineArr = []
+  for (let i = 0; i < 5; i++) {
+    let mineNumber = Math.floor(Math.random() * 25)
+    mineArr.push(mineNumber)
+  }
+  return mineArr
+}
