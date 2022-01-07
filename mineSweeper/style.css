@@ -1,0 +1,13 @@
+.cell {
+  height: 20px;
+  width: 20px;
+  background-color: antiquewhite;
+  border: 0.5px solid black;
+}
+
+#board {
+  display: flex;
+  height: 120px;
+  width: 110px;
+  background-color: antiquewhite;
+}
