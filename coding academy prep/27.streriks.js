@@ -19,6 +19,7 @@ console.log('ok')
 
 let character = ' ✡' || prompt('choose a character to display in shapes')
 document.write('<h1>Get pyramid</h1>')
+
 let length = 5 || prompt('pick a number 1-10')
 function getAsterisks(length) {
   for (let i = 0; i < length; i++) {
