@@ -10,5 +10,5 @@ function startTimer() {
     //global var
     gTimer += 0.01
     renderTimer()
-  })
+  }, 10)
 }
